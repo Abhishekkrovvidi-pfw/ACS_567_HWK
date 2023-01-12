@@ -1,0 +1,8 @@
+﻿What are the benefits to use scrum ?
+ans)As compared to other methods such as Waterfall , efforts in Scrum is 10x times less and velocity is 7X times more.The results are fast and new mods can 
+    be done at any point of time during the implementation of the project.
+
+c.2.According to Cynefin framework, what are five problem domains? Which 
+problem domain(s) is Scrum particularly well suited for?
+ans)The five different domains in cynefin framework are simple , complicated ,Chaotic , complex and disorder.
+	Scrum is particularly well suited for complex domain.
