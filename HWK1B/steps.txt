@@ -1,0 +1,8 @@
+
+Saturday: 10432
+Sunday: 3678
+Monday: 7432
+Tuesday: 3620
+Wednesday: 6402
+Friday : 4560
+Saturday: 5678
