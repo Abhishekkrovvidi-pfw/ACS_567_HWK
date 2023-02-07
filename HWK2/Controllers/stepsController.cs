@@ -19,24 +19,39 @@ namespace HWK2.Controllers
             _context = context;
         }
 
-        // GET: steps
+        /// <summary>
+        /// GET: steps
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Index()
         {
               return View(await _context.steps.ToListAsync());
         }
 
-        // GET: steps/SearchForm
+        ///GET: steps/SearchForm
         public async Task<IActionResult>ShowFrom ()
         {
             return View();
         }
 
-        // GET: steps/ShowSearchResults
+        /// <summary>
+        /// GET: steps/ShowSearchResults
+        /// </summary>
+        /// <param name="SearchPhrase"></param>
+        /// <returns></returns>
         public async Task<IActionResult> ShowSearchResults(string SearchPhrase)
         {
             return View("Index", await _context.steps.Where( j => j.Day.Contains(SearchPhrase)).ToListAsync());
         }
-        // GET: steps/Details/5
+
+
+       
+
+        /// <summary>
+        /// GET: steps/Details/5
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.steps == null)
@@ -54,13 +69,20 @@ namespace HWK2.Controllers
             return View(steps);
         }
 
-        // GET: steps/Create
+        /// <summary>
+        /// GET: steps/Create
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: steps/Create
+        /// <summary>
+        /// POST: steps/Create
+        /// </summary>
+        /// <param name="steps"></param>
+        /// <returns></returns>
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -76,7 +98,11 @@ namespace HWK2.Controllers
             return View(steps);
         }
 
-        // GET: steps/Edit/5
+        /// <summary>
+        /// GET: steps/Edit/5
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.steps == null)
@@ -92,7 +118,12 @@ namespace HWK2.Controllers
             return View(steps);
         }
 
-        // POST: steps/Edit/5
+        /// <summary>
+        /// POST: steps/Edit/5
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="steps"></param>
+        /// <returns></returns>
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -127,7 +158,11 @@ namespace HWK2.Controllers
             return View(steps);
         }
 
-        // GET: steps/Delete/5
+        /// <summary>
+        /// GET: steps/Delete/5
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.steps == null)
@@ -145,7 +180,11 @@ namespace HWK2.Controllers
             return View(steps);
         }
 
-        // POST: steps/Delete/5
+        /// <summary>
+        /// POST: steps/Delete/5
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
