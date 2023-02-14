@@ -11,5 +11,10 @@ namespace HWK4.Data
         {
         }
         public DbSet<HWK4.Models.steps> steps { get; set; }
+
+        internal string Analyze()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

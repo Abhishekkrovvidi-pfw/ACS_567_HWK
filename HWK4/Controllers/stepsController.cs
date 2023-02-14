@@ -198,6 +198,13 @@ namespace HWK4.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+     
+
+        public string GetAnalysis()
+        {
+            return _context.Analyze();
+        }
+
         private bool stepsExists(int id)
         {
           return _context.steps.Any(e => e.Id == id);
