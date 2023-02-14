@@ -203,6 +203,19 @@ namespace HWK2.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Data Analysis
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("~/report")]
+        public async Task<string> GetReport()
+        {
+
+            var Steps = await _context.steps.ToListAsync();
+            return steps.Reports(Steps);
+
+        }
+
         private bool stepsExists(int id)
         {
           return _context.steps.Any(e => e.Id == id);
