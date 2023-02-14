@@ -25,7 +25,7 @@ namespace HWK4.Controllers
         /// <returns></returns>
         public async Task<IActionResult> Index()
         {
-              return View(await _context.steps.ToListAsync());
+            return View(await _context.steps.ToListAsync());
         }
 
         ///GET: steps/SearchForm/
@@ -193,14 +193,32 @@ namespace HWK4.Controllers
             {
                 _context.steps.Remove(steps);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Data Analysis
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("~/report")]
+        public async Task<string> GetReport()
+        {
+
+            var Steps = await _context.steps.ToListAsync();
+            return steps.Reports(Steps);
+
+        }
+
+
+
         private bool stepsExists(int id)
         {
-          return _context.steps.Any(e => e.Id == id);
+            return _context.steps.Any(e => e.Id == id);
         }
     }
 }
+    
+
+
